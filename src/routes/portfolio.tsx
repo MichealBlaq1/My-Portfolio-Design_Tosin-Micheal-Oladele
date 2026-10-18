@@ -8,7 +8,8 @@ export const Route = createFileRoute("/portfolio")({
       { title: "Portfolio — Tosin Micheal Oladele" },
       { name: "description", content: "Product Management case studies: Kowope, VitalMatch, Cycluno, plus a Business Analytics learning project." },
       { property: "og:title", content: "Portfolio — Tosin Micheal Oladele" },
-      { property: "og:description", content: "Product Management case studies and a Business Analytics learning project." },
+      { property: "og:description", content: "Product Management case studies plus a completed customer churn modeling and retention analytics project." },
+
     ],
   }),
   component: Portfolio,
@@ -130,28 +131,63 @@ function Portfolio() {
 
       <section className="container-x mt-20" aria-labelledby="ba">
         <p className="eyebrow">Business Analytics</p>
-        <article className="mt-4 grid gap-8 rounded-xl border border-dashed bg-secondary p-6 md:grid-cols-[2fr_1fr] md:p-10">
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <h2 id="ba" className="font-display text-3xl text-primary">Sales Performance Analysis</h2>
-              <StatusBadge kind="progress">In Progress</StatusBadge>
-            </div>
-            <p className="mt-1 text-muted-foreground">Microsoft Excel · Learning project</p>
-            <p className="mt-5 text-foreground">
-              A practical learning project using a <strong>fictional sales dataset</strong> to explore revenue,
-              profitability, regional performance, product categories, and monthly trends.
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              The dataset is fictional. Findings and deliverables will be shared once the analysis is complete.
-            </p>
+        <article className="mt-4 rounded-xl border bg-card p-6 md:p-10">
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 id="ba" className="font-display text-3xl text-primary">
+              Predictive Customer Churn Modeling & Retention Optimization
+            </h2>
+            <StatusBadge kind="done">Completed</StatusBadge>
           </div>
-          <ul className="flex flex-wrap content-start gap-2" aria-label="Areas explored">
-            {["Revenue", "Profitability", "Regional performance", "Product categories", "Monthly trends"].map((t) => (
-              <li key={t} className="badge badge-proposed">{t}</li>
-            ))}
-          </ul>
+          <p className="mt-1 text-muted-foreground">
+            Customer Analytics & Predictive Modeling · Python (Pandas, Scikit-learn, Statsmodels) · Microsoft Excel
+          </p>
+          <p className="mt-5 max-w-3xl text-foreground">
+            Developed a logistic regression framework using the <strong>UCI Online Retail II dataset</strong> to
+            identify customers at risk of churning and support data-driven retention strategies for BritishGifts
+            Online.
+          </p>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <Field label="Key contributions">
+              <ul className="mt-1 grid gap-2">
+                {[
+                  "Cleaned transaction data and engineered customer-level RFM and tenure features.",
+                  "Built a logistic regression model and assessed multicollinearity, statistical significance, and churn predictors.",
+                  "Evaluated predictive performance and optimized classification thresholds to improve customer targeting and retention resource allocation.",
+                ].map((c) => (
+                  <li key={c} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" aria-hidden />
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </Field>
+            <div className="grid gap-6">
+              <Field label="Key results">
+                <p>
+                  Achieved an <strong>ROC-AUC of approximately 0.79</strong> and <strong>recall of 76.74%</strong> at
+                  the standard classification threshold.
+                </p>
+              </Field>
+              <Field label="Skills">
+                <ul className="mt-1 flex flex-wrap gap-2">
+                  {[
+                    "Predictive Modeling",
+                    "Logistic Regression",
+                    "RFM Analysis",
+                    "Feature Engineering",
+                    "Model Evaluation",
+                    "Churn Risk Scoring",
+                    "Retention Optimization",
+                  ].map((s) => (
+                    <li key={s} className="badge badge-proposed">{s}</li>
+                  ))}
+                </ul>
+              </Field>
+            </div>
+          </div>
         </article>
       </section>
+
     </>
   );
 }
