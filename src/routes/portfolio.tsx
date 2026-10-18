@@ -6,7 +6,7 @@ export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
       { title: "Portfolio — Tosin Micheal Oladele" },
-      { name: "description", content: "Product Management case studies: Kowope, VitalMatch, Cycluno, plus a Business Analytics learning project." },
+      { name: "description", content: "Product Management case studies: Kowope, VitalMatch, Cycluno, plus a completed customer churn modeling and retention analytics project." },
       { property: "og:title", content: "Portfolio — Tosin Micheal Oladele" },
       { property: "og:description", content: "Product Management case studies plus a completed customer churn modeling and retention analytics project." },
 
