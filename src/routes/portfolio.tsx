@@ -46,6 +46,7 @@ const projects: Project[] = [
   {
     name: "VitalMatch",
     tagline: "Blood Donor Matching Platform",
+    achievement: "Top 3 Finish — Enyata × Interswitch Buildathon",
     problem: "Connecting people who need blood with suitable donors quickly.",
     overview: "A blood donor matching solution built as a buildathon project.",
     role: "Product Manager",
