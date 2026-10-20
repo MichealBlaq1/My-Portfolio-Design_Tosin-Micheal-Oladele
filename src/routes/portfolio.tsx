@@ -63,7 +63,7 @@ const projects: Project[] = [
     tagline: "Software Testing and Quality Management",
     problem: "Teams need structured ways to manage software testing and quality.",
     overview: "A software testing and quality management product.",
-    role: "Product contributor",
+    role: "Junior Product Manager",
     contributions: [
       "Wrote product documentation",
       "Drafted user stories",
