@@ -98,6 +98,11 @@ function Portfolio() {
               <span className="font-display text-5xl text-teal">0{i + 1}</span>
               <h2 className="mt-2 font-display text-3xl text-primary">{p.name}</h2>
               <p className="mt-1 text-muted-foreground">{p.tagline}</p>
+              {p.achievement ? (
+                <div className="mt-3 flex items-center gap-2">
+                  <StatusBadge kind="done">{p.achievement}</StatusBadge>
+                </div>
+              ) : null}
               {p.demo ? (
                 <a href={p.demo} target="_blank" rel="noopener noreferrer" className="btn btn-outline mt-6">
                   View demo <ExternalLink className="h-4 w-4" aria-hidden />
