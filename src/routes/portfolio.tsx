@@ -18,6 +18,7 @@ export const Route = createFileRoute("/portfolio")({
 type Project = {
   name: string;
   tagline: string;
+  achievement?: string;
   problem: string;
   overview: string;
   role: string;
@@ -45,6 +46,7 @@ const projects: Project[] = [
   {
     name: "VitalMatch",
     tagline: "Blood Donor Matching Platform",
+    achievement: "Top 3 Finish — Enyata × Interswitch Buildathon",
     problem: "Connecting people who need blood with suitable donors quickly.",
     overview: "A blood donor matching solution built as a buildathon project.",
     role: "Product Manager",
@@ -61,7 +63,7 @@ const projects: Project[] = [
     tagline: "Software Testing and Quality Management",
     problem: "Teams need structured ways to manage software testing and quality.",
     overview: "A software testing and quality management product.",
-    role: "Product contributor",
+    role: "Junior Product Manager",
     contributions: [
       "Wrote product documentation",
       "Drafted user stories",
@@ -96,6 +98,11 @@ function Portfolio() {
               <span className="font-display text-5xl text-teal">0{i + 1}</span>
               <h2 className="mt-2 font-display text-3xl text-primary">{p.name}</h2>
               <p className="mt-1 text-muted-foreground">{p.tagline}</p>
+              {p.achievement ? (
+                <div className="mt-3 flex items-center gap-2">
+                  <StatusBadge kind="done">{p.achievement}</StatusBadge>
+                </div>
+              ) : null}
               {p.demo ? (
                 <a href={p.demo} target="_blank" rel="noopener noreferrer" className="btn btn-outline mt-6">
                   View demo <ExternalLink className="h-4 w-4" aria-hidden />
