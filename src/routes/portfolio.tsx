@@ -18,6 +18,7 @@ export const Route = createFileRoute("/portfolio")({
 type Project = {
   name: string;
   tagline: string;
+  achievement?: string;
   problem: string;
   overview: string;
   role: string;
